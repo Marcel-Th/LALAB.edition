@@ -1,0 +1,15 @@
+import numpy as np
+# crée deux matrices 2x2
+MatriceA= np.matrix([[10, 2], [30, 4]])
+MatriceB = np.matrix([[5, 6], [7, 8]])
+resultat = np.matrix(np.zeros((2,2))) # matrice de résultat d'addition
+print('A matrix :\n', MatriceA)
+print('\nB matrix :\n', MatriceB)
+# méthode traditionnelle
+for i in range(MatriceA.shape[1]):
+for j in range(MatriceA.shape[0]):
+resultat[i, j] = MatriceA[i, j] + MatriceB[i, j]
+print ('\nRésultat calculé manuellement : \n', resultat)
+# méthode en utilisant l'opérateur +
+resultatB = MatriceA + MatriceB
+print ('\nRésultat calculé en utilisant opérateur + :\n', resultatB)
