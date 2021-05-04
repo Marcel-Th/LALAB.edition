@@ -1,0 +1,133 @@
+à partir de  matrixcalc  import  matrixcalc
+de  matrixcalc  importation  matrixinput
+version  =  "v0.1.7"
+
+ Interface de classe ( objet ):
+
+     menu def ( auto ):
+        print ( "Bienvenue dans MatrixCalculator% s"  %  version )
+        imprimer ( "" "
+        1. Ajouter des matrices
+        2. Soustraire des matrices
+        3. Multiplier les matrices
+        4. Matrices de multiplication scalaires
+        5. Transposer une matrice
+        6. Trouver le déterminant d'une matrice
+        7. Trouver l'inverse d'une matrice
+        8. Quitter
+        "" " )
+
+        selection  =  input ( "Veuillez saisir le numéro de votre sélection:" )
+    
+        def  naviguer ( sélection ):
+            si  sélection  ==  "1" :
+                 interface de retour (). add_or_sub ( matricecalc . MatOperators (). add_matrices )
+             sélection  elif ==  "2" :
+                 interface de retour (). add_or_sub ( matricecalc . sous_matrices )
+             sélection  elif ==  "3" :
+                 interface de retour (). mul ()
+             sélection  elif ==  "4" :
+                 interface de retour (). scalaire_mul ()
+             sélection  elif ==  "5" :
+                 interface de retour (). transposer ()
+             sélection  elif ==  "6" :
+                 interface de retour (). det ()
+             sélection  elif ==  "7" :
+                 interface de retour (). inverse ()
+             sélection  elif ==  "8" :
+                sortie ()
+
+            selection  =  input ( "Entrée non reconnue. Veuillez ressaisir votre sélection:" )
+            naviguer ( sélection )
+
+        naviguer ( sélection )
+
+    def  add_or_sub ( soi , opérateur ):
+        rows  =  int ( input ( " \ n Combien de lignes y a-t-il dans vos matrices?" ))
+        cols  =  int ( input ( "Combien de colonnes y a-t-il dans vos matrices?" ))
+
+        a  =  entrée matrice . App ( lignes , cols ). matrice
+        b  =  entrée matrice . App ( lignes , cols ). matrice
+
+        ab  =  opérateur ( a , b )
+
+        print ( " \ n Réponse:" )
+        matricecalc . print_matrix ( ab )
+
+        entrée ( " \ n Appuyez sur ENTER pour revenir au menu \ n " )
+        Interface (). menu ()
+
+    def  mul ( soi ):
+        row1  =  int ( input ( " \ n Combien de lignes y a-t-il dans la matrice A?" ))
+        col1  =  int ( input ( "Combien de colonnes y a-t-il dans la matrice A?" ))
+
+        row2  =  int ( input ( " \ n Combien de lignes y a-t-il dans la matrice B?" ))
+        col2  =  int ( input ( "Combien de colonnes y a-t-il dans la matrice B?" ))
+
+        a  =  entrée matrice . App ( ligne1 , col1 ). matrice
+        b  =  entrée matrice . App ( ligne2 , col2 ). matrice
+
+        ab  =  matricecalc . MatOperators (). mul_matrices ( a , b )
+
+        print ( " \ n Le produit de la matrice A et de la matrice B est:" )
+        matricecalc . print_matrix ( ab )
+
+        entrée ( " \ n Appuyez sur ENTER pour revenir au menu \ n " )
+        Interface (). menu ()
+
+    def  scalar_mul ( soi ):
+        rows  =  int ( input ( " \ n Combien de lignes y a-t-il dans votre matrice?" ))
+        cols  =  int ( input ( "Combien de colonnes y a-t-il dans votre matrice?" ))
+        scalar  =  int ( input ( "Par quel scalaire multipliez-vous votre matrice?" ))
+
+        a  =  entrée matrice . App ( lignes , cols ). matrice        
+
+        scalar_a  =  matricecalc . MatOperators (). scalar_mul ( a , scalaire )
+
+        print ( " \ n Le produit scalaire de la matrice A est:" )
+        matricecalc . print_matrix ( scalaire_a )
+
+        entrée ( " \ n Appuyez sur ENTER pour revenir au menu \ n " )
+        Interface (). menu ()
+
+    def  transposer ( auto ):
+        rows  =  int ( input ( " \ n Combien de lignes y a-t-il dans votre matrice?" ))
+        cols  =  int ( input ( "Combien de colonnes y a-t-il dans votre matrice?" ))
+
+        a  =  entrée matrice . App ( lignes , cols ). matrice        
+
+        transpose_a  =  matricecalc . Matrice ( a ). transposer ()
+
+        print ( " \ n La matrice transposée de la matrice A est:" )
+        matricecalc . print_matrix ( transpose_a )
+
+        entrée ( " \ n Appuyez sur ENTER pour revenir au menu \ n " )
+        Interface (). menu ()
+
+    def  det ( auto ):
+        rows  =  int ( input ( " \ n Combien de lignes et de colonnes y a-t-il dans votre matrice?" ))
+
+        a  =  entrée matrice . App ( lignes , lignes ). matrice       
+
+        det_a  =  matricecalc . déterminant ( a )
+
+        print ( " \ n Le déterminant de la matrice A est:% s"  %  det_a )
+
+        entrée ( " \ n Appuyez sur ENTER pour revenir au menu \ n " )
+        Interface (). menu ()
+
+    def  inverse ( soi ):
+        rows  =  int ( input ( " \ n Combien de lignes et de colonnes y a-t-il dans votre matrice?" ))
+
+        a  =  entrée matrice . App ( lignes , lignes ). matrice          
+
+        si  matrixcalc . déterminant ( a ) ==  0 :
+            print ( " \ n Désolé, matrice non inversible." )
+        sinon :
+            inverse_a  =  matricecalc . inverse ( a )
+
+            print ( " \ n L'inverse de la matrice A est:" )
+            matricecalc . print_matrix ( inverse_a )
+
+        entrée ( " \ n Appuyez sur ENTER pour revenir au menu \ n " )
+        Interface (). menu ()
