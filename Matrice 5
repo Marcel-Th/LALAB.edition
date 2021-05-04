@@ -1,0 +1,52 @@
+à partir de  matrixcalc  import  matrixcalc
+à partir de l'  importation tkinter  * 
+
+ appli de classe :
+
+    def  __init__ ( soi , m , n ):
+        soi . racine  =  Tk ()  
+        soi . matrice  =  Aucun
+        soi . liste_entrée  = []
+    
+        soi . frame  =  Frame ( self . root )
+        soi . cadre . grille ()
+
+        soi . m  =  m
+        soi . n  =  n
+
+        soi . soumettre  =  Bouton (
+            soi . frame , text = "Soumettre" , commande = self . interpréter
+            )
+        soi . soumettre . grille ( ligne = 0 , colonne span = 1000 )
+
+        soi . entrées ( m , n )
+
+        soi . racine . boucle principale ()
+
+    def  add_entry ( soi , m , n ):
+        entry  =  Entry ( self . frame , width = 2 )
+        soi . liste_entrée . ajouter ( entrée )
+        entrée . grille ( ligne = m , colonne = n )
+
+     entrées def ( self , m , n ):
+        pour la  rangée  dans la  plage ( 1 , m + 1 ):
+            pour  col  dans la  plage ( n ):
+                soi . add_entry ( ligne , col )
+
+    def  interpréter ( soi-même ):
+        x  =  0
+        valeurs  = []
+        a  =  matricecalc . matrice ()
+
+        pour  elem  en  soi . liste_entrée :
+            valeurs . append ( int ( elem . get ()))
+
+        pour  r  dans la  plage ( self . m ):
+            row  = []
+            pour  c  in  range ( self . n ):
+                ligne . ajouter ( valeurs [ c ])
+            matricecalc . Matrice ( a ). add_row ( ligne )
+            del  valeurs [ 0 : self . n ]
+
+        soi . matrice  =  a
+        soi . racine . détruire ()
